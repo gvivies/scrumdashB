@@ -1,0 +1,22 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
+	<title>Scrum Dashboard for Scrmberry</title>
+	<link rel="stylesheet" href="app/styles/scrumdashB.css">
+	<!-- script src="/socket.io/socket.io.js"></script> -->
+</head>
+<body>
+	<div ng-app="dashboard">
+	<h1>Scrumberry dashboard</h1>
+	<main data-ng-controller="JenkinsDashboardCtrl" data-ng-init="init()">
+		<p>Connected : {{connected}}</p>
+		<jenkins-dashboard></jenkins-dashboard>
+	</main>
+	<script type="text/javascript" src="app/js/angular.js"></script>
+	<script type="text/javascript" src="app/js/app.js"></script>
+	<script type="text/javascript" src="app/js/jenkinsDashboard.js"></script>
+	<script src="http://localhost:8888/socket.io/socket.io.js"></script> 
+	</div>
+</body>
+</html>

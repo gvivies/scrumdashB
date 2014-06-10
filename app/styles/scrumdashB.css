@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+
+h1 {
+	font-size: 22px;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: left;
+}
+
+/* ========= JENKINS DashBoard ============ */
+#jenkinsDashboard {
+	margin-bottom: 24px;
+	margin-top: 24px;
+	width: 280px;
+}
