@@ -1,15 +1,49 @@
 @CHARSET "UTF-8";
 
-h1 {
-	font-size: 22px;
-	margin-top: 0px;
-	margin-bottom: 0px;
-	text-align: left;
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;	
 }
 
-/* ========= JENKINS DashBoard ============ */
+h1 {
+	font-size: 28px;
+	margin-bottom: 8px;
+	margin-left: 14px;
+	margin-top: 8px;	
+	text-align: left;
+}
+.status {
+	font-size: 8px;
+	margin-left: 14px;
+}
+.status-on {
+	color: rgb(57, 214, 50);
+}
+.status-off {
+	color: red;
+}
 #jenkinsDashboard {
+	background-color: #f6f6f6;
+  	-webkit-border-radius: 4px;
+  	-moz-border-radius: 4px;
+  	border-radius: 4px;	
+  	border-style: solid;
+  	border-color: #cccccc;
+  	border-width: 1px;
+  	display: block;  	
 	margin-bottom: 24px;
+	margin-left: 14px;	
 	margin-top: 24px;
 	width: 280px;
+}
+.info-msg {
+	margin-left: 6px;
+	margin-top: 12px;
+}
+#jenkinsDashboard .panel-heading {
+	text-align: center;
+	width:100%;
+}
+#jenkinsDashboard .panel-body {
+	background-color: #ffffff;
 }

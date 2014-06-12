@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=US-ASCII">
-	<title>Scrum Dashboard for Scrmberry</title>
+	<title>Dashboard for Scrumberry</title>
 	<link rel="stylesheet" href="app/styles/scrumdashB.css">
 	<!-- script src="/socket.io/socket.io.js"></script> -->
 </head>
@@ -10,7 +10,7 @@
 	<div ng-app="dashboard">
 	<h1>Scrumberry dashboard</h1>
 	<main data-ng-controller="JenkinsDashboardCtrl" data-ng-init="init()">
-		<p>Connected : {{connected}}</p>
+		<p ng-class="{true:'status status-on' , false:'status status-off'}[connected]">{{(connected) ? 'Connected': 'Not connected'}}</p>
 		<jenkins-dashboard></jenkins-dashboard>
 	</main>
 	<script type="text/javascript" src="app/js/angular.js"></script>
