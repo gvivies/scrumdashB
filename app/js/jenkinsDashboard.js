@@ -8,11 +8,12 @@ angular.module('dashboard').directive('jenkinsDashboard', function () {
         templateUrl: './app/views/jenkinsDashboard.html',
         link: function (scope, elem, attrs) {
     		
-        	var alarmsCount = 0;
+        	var alarmsCount = 0, socket;
+        	
     		scope.alarmingJobs = [];
     		scope.alarmsCount = 0;
     		scope.jenkinsInError = false;
-    		var socket = io.connect("http://localhost:8888");
+    		scope.connected = false;
     		
     		scope.addJobInAlarm = function (job) {
     			var index = scope.alarmingJobs.indexOf(job.name);
@@ -32,19 +33,27 @@ angular.module('dashboard').directive('jenkinsDashboard', function () {
     			scope.jenkinsInError = (scope.alarmsCount>0);			
     		};
     		
-    		socket.on('connect', function() {
-    			scope.connected = true;
-    		});
+       		try {
+    			socket = io.connect(scope.scrumberryHost);
+    		} catch (err) {
+    			console.log('Error, cannot connect to '+scope.scrumberryHost + ' : '+err.message)
+    		}
     		
-    		socket.on('JENKINS_JOB_STATUS_CHANGE', function(event) {
-    			if (event.data.lastBuild.number == event.data.lastFailedBuild.number) {
-    				scope.addJobInAlarm(event.data);
-    			} else {
-    				scope.removeJobInAlarm(event.data);
-    			}
-
-    			scope.$apply();
-    		});   
+    		if (socket !== undefined) {
+        		socket.on('connect', function() {
+        			scope.connected = true;
+        		});
+        		
+        		socket.on('JENKINS_JOB_STATUS_CHANGE', function(event) {
+        			if (event.data.lastBuild.number == event.data.lastFailedBuild.number) {
+        				scope.addJobInAlarm(event.data);
+        			} else {
+        				scope.removeJobInAlarm(event.data);
+        			}
+        			scope.$apply();
+        		});   			
+    		}
+    		
         }
       };
     });

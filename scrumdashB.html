@@ -10,7 +10,7 @@
 	<div ng-app="dashboard">
 	<h1>Scrumberry dashboard</h1>
 	<main data-ng-controller="JenkinsDashboardCtrl" data-ng-init="init()">
-		<p ng-class="{true:'status status-on' , false:'status status-off'}[connected]">{{(connected) ? 'Connected': 'Not connected'}}</p>
+		<div ng-class="{true:'status status-on' , false:'status status-off'}[connected]">{{(connected) ? 'Connected': 'Not connected'}}</div>	
 		<jenkins-dashboard></jenkins-dashboard>
 	</main>
 	<script type="text/javascript" src="app/js/angular.js"></script>

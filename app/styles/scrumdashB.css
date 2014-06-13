@@ -12,16 +12,22 @@ h1 {
 	margin-top: 8px;	
 	text-align: left;
 }
+
 .status {
 	font-size: 8px;
 	margin-left: 14px;
+	margin-right: 28px;
+	padding-top: 8px;
 }
+
 .status-on {
 	color: rgb(57, 214, 50);
 }
+
 .status-off {
 	color: red;
 }
+
 #jenkinsDashboard {
 	background-color: #f6f6f6;
   	-webkit-border-radius: 4px;
@@ -30,20 +36,23 @@ h1 {
   	border-style: solid;
   	border-color: #cccccc;
   	border-width: 1px;
-  	display: block;  	
+  	display: block;	
 	margin-bottom: 24px;
 	margin-left: 14px;	
 	margin-top: 24px;
 	width: 280px;
 }
-.info-msg {
+
+#jenkinsDashboard .info-msg {
 	margin-left: 6px;
 	margin-top: 12px;
 }
+
 #jenkinsDashboard .panel-heading {
 	text-align: center;
 	width:100%;
 }
+
 #jenkinsDashboard .panel-body {
 	background-color: #ffffff;
 }
